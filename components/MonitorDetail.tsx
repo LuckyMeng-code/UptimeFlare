@@ -39,11 +39,12 @@ export default function MonitorDetail({
       />
     )
 
-  // Hide real status icon if monitor is in maintenance
+  // 处理维护状态的图标逻辑
   const now = new Date()
   const hasMaintenance = maintenances
     .filter((m) => now >= new Date(m.start) && (!m.end || now <= new Date(m.end)))
     .find((maintenance) => maintenance.monitors?.includes(monitor.id))
+    
   if (hasMaintenance)
     statusIcon = (
       <IconAlertTriangle
@@ -64,22 +65,10 @@ export default function MonitorDetail({
 
   const uptimePercent = (((totalTime - downTime) / totalTime) * 100).toPrecision(4)
 
-  // Conditionally render monitor name with or without hyperlink based on monitor.url presence
+  // 【关键修改】：移除了 <a> 标签跳转逻辑，仅保留图标和名称
   const monitorNameElement = (
     <Text mt="sm" fw={700} style={{ display: 'inline-flex', alignItems: 'center' }}>
-      {monitor.statusPageLink ? (
-        <a
-          href={monitor.statusPageLink}
-          target="_blank"
-          style={{ display: 'inline-flex', alignItems: 'center', color: 'inherit' }}
-        >
-          {statusIcon} {monitor.name}
-        </a>
-      ) : (
-        <>
-          {statusIcon} {monitor.name}
-        </>
-      )}
+      {statusIcon} {monitor.name}
     </Text>
   )
 
