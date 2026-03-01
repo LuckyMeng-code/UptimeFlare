@@ -55,7 +55,7 @@ const workerConfig: WorkerConfig = {
     {
       id: 'blog',
       name: 'blog',
-      method: 'HEAD',
+      method: 'GET',
       target: 'https://blog.icrs.top',
       statusPageLink: 'https://blog.icrs.top',
       hideLatencyChart: false,
@@ -65,7 +65,7 @@ const workerConfig: WorkerConfig = {
     {
       id: 'emby',
       name: 'Emby',
-      method: 'HEAD',
+      method: 'GET',
       target: 'https://emby.985517.xyz/',
       statusPageLink: 'https://emby.985517.xyz/',
       hideLatencyChart: false,
@@ -75,7 +75,7 @@ const workerConfig: WorkerConfig = {
     {
       id: 'drive',
       name: 'Drive',
-      method: 'HEAD',
+      method: 'GET',
       target: 'https://d.icrs.top/',
       statusPageLink: 'https://d.icrs.top/',
       hideLatencyChart: false,
