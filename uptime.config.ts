@@ -54,7 +54,7 @@ const workerConfig: WorkerConfig = {
     // },
     {
       id: 'blog',
-      name: 'blog',
+      name: 'Blog',
       method: 'GET',
       target: 'https://blog.icrs.top',
       statusPageLink: 'https://blog.icrs.top',
