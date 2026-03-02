@@ -82,6 +82,26 @@ const workerConfig: WorkerConfig = {
       expectedCodes: [200],
       timeout: 10000,
     },
+    {
+      id: 'HK',
+      name: 'HK',
+      method: 'GET',
+      target: 'http://38.76.217.180',
+      statusPageLink: 'http://38.76.217.180',
+      hideLatencyChart: false,
+      expectedCodes: [200],
+      timeout: 10000,
+    },
+        {
+      id: 'US',
+      name: 'US',
+      method: 'GET',
+      target: 'http://66.154.107.231',
+      statusPageLink: 'http://66.154.107.231',
+      hideLatencyChart: false,
+      expectedCodes: [200],
+      timeout: 10000,
+    },
   ],
   notification: {
     // [Optional] Notification webhook settings, if not specified, no notification will be sent
