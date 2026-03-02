@@ -89,7 +89,7 @@ const workerConfig: WorkerConfig = {
       target: '38.76.217.180:22',
       statusPageLink: '38.76.217.180:22',
       hideLatencyChart: false,
-      expectedCodes: [200],
+      expectedCodes: [403],
       timeout: 10000,
     },
         {
@@ -99,7 +99,7 @@ const workerConfig: WorkerConfig = {
       target: '66.154.107.231:22',
       statusPageLink: '66.154.107.231:11',
       hideLatencyChart: false,
-      expectedCodes: [200],
+      expectedCodes: [403],
       timeout: 10000,
     },
   ],
