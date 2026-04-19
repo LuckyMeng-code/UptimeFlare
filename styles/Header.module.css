@@ -1,8 +1,21 @@
 .header {
   height: rem(56px);
   margin-bottom: rem(100px);
-  background-color: var(--mantine-color-body);
-  border-bottom: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+  
+  /* 1. 将原本的纯色背景改为极低透明度的白色，用于透光 */
+  background-color: rgba(255, 255, 255, 0.02);
+  
+  /* 2. 增加背景模糊，形成毛玻璃感 */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  
+  /* 3. 将底部边框改为半透明的细微高光反光 */
+  border-bottom: rem(1px) solid rgba(255, 255, 255, 0.08);
+  
+  /* 可选：让顶栏一直悬浮在最上层 */
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .inner {
@@ -18,16 +31,22 @@
   padding: rem(8px) rem(12px);
   border-radius: var(--mantine-radius-sm);
   text-decoration: none;
-  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
+  /* 默认文字颜色改为偏白，带点透明度 */
+  color: rgba(255, 255, 255, 0.7);
   font-size: var(--mantine-font-size-sm);
   font-weight: 500;
+  transition: all 0.2s ease;
 
   @mixin hover {
-    background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
+    /* 鼠标悬浮时，背景变成半透明发光块，而不是原本的死灰色 */
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
   }
 
   [data-mantine-color-scheme] &[data-active] {
-    background-color: var(--mantine-color-blue-filled);
+    /* 当前激活的页面按钮，用更亮一点的半透明色突出 */
+    background-color: rgba(255, 255, 255, 0.15);
     color: var(--mantine-color-white);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 }
