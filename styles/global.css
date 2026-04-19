@@ -2,9 +2,9 @@
 
 /* 1. 替换默认的纯黑/纯白背景，换成深色渐变底色，这样毛玻璃才有光影透视感 */
 body {
-  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%) !important;
+  background: linear-gradient(to bottom right, #2d3748 0%, #1a202c 50%, #0f172a 100%) !important;
   background-attachment: fixed !important;
-  color: #f8fafc !important; /* 全局文字偏白 */
+  color: #f8fafc !important;
 }
 
 /* 2. 强行将 Mantine 的底层背景变量设为透明 */
