@@ -1,0 +1,57 @@
+/* styles/global.css */
+
+/* 1. 替换默认的纯黑/纯白背景，换成深色渐变底色，这样毛玻璃才有光影透视感 */
+body {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%) !important;
+  background-attachment: fixed !important;
+  color: #f8fafc !important; /* 全局文字偏白 */
+}
+
+/* 2. 强行将 Mantine 的底层背景变量设为透明 */
+:root {
+  --mantine-color-body: transparent !important;
+}
+
+/* 3. 为页面里的主要卡片 (总体状态、站点列表项等) 注入毛玻璃材质 */
+.mantine-Card-root, 
+.mantine-Paper-root,
+.mantine-Accordion-item {
+  /* 半透明暗色底 */
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  
+  /* 核心：背景模糊 */
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  
+  /* 玻璃边缘的反光高光 */
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  
+  /* 空间立体悬浮阴影 */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3) !important;
+  
+  /* 圆角 */
+  border-radius: 16px !important;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+/* 4. 修复折叠面板控制条的背景，避免重叠发黑 */
+.mantine-Accordion-control {
+  background-color: transparent !important;
+}
+.mantine-Accordion-control:hover {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* 5. 顶部的 Header 也要毛玻璃化 */
+header, [class*="Header_header"] {
+  background-color: rgba(255, 255, 255, 0.02) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* 让文字在深色背景上不发虚 */
+.mantine-Text-root, .mantine-Title-root {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
